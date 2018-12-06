@@ -1,0 +1,21 @@
+#include "LiquidCrystal.h"			// this is the Arduino LCD library
+LiquidCrystal lcd(12, 11, 10, 5, 4, 3, 2);		// these are the LCD pins used
+void setup() {					
+ lcd.begin (16, 2);				//this sets the columns and rows on the LCD
+  lcd.begin (16, 2);
+    lcd.home();
+    lcd.print ("Heather’s");			// This text is shown on start-up for 6 seconds
+    lcd.setCursor(0,1);
+    lcd.print ("Temp controller");			// This text is shown on start-up for 6 seconds 
+    delay (6000);
+}
+void loop() {
+  lcd.clear ();
+  lcd.home ();
+  lcd.print ("Temperature=");			// This prints the descriptive text 
+  lcd.setCursor (0,1);
+  lcd.print (Temperature);			// This prints the calculated temp converted 							from the sensor pin
+
+  lcd.print ("oC");				// Print the degree symbol
+  delay(1000);					// Delay for read stability
+  }
